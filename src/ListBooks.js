@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Shelf from './Shelf'
+import { Link } from 'react-router-dom';
 
 //New component with html from App.cs
 class ListBooks extends Component {
@@ -31,8 +32,11 @@ class ListBooks extends Component {
           </ol>
         </div>
         <div className="open-search">
-          <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-        </div>
+              {/*<a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>*/}
+              <Link to="/search">
+                Add a book
+              </Link>
+            </div>
       </div>
     )
   }

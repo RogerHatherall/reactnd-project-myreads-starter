@@ -4,6 +4,7 @@ import './App.css'
 // New components with original html
 import SearchBooks from './SearchBooks'
 import ListBooks from './ListBooks'
+import { Route } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -25,11 +26,16 @@ class BooksApp extends React.Component {
     console.log(this.state.books)
     return (
       <div className="app">
-        <SearchBooks />
-        <ListBooks
-          shelvesArray={this.state.shelves}
-          booksArray={this.state.books}
+        <Route path="/search" render={() => (
+          <SearchBooks />
+        )} />
+        
+        <Route exact path="/" render={() => (
+          <ListBooks
+            shelvesArray={this.state.shelves}
+            booksArray={this.state.books}
          />
+        )} />
       </div>
     )
   }
