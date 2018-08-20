@@ -5,6 +5,9 @@ import Shelf from './Shelf'
 class ListBooks extends Component {
   render () {
     console.log(this.props.shelvesArray)
+    console.log(this.props.booksArray)
+    const bookShelfArray=this.props.booksArray
+    
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -18,7 +21,9 @@ class ListBooks extends Component {
                 .map(shelf => (
                   <li key={shelf}>
                     <Shelf 
-                    title={shelf}/>
+                    shelfTitle={shelf.shelfTitle}
+                    shelfName={shelf.shelfName}
+                    booksArray={bookShelfArray}/>
                   </li>
                 ))
               }
