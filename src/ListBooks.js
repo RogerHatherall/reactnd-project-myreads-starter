@@ -24,7 +24,9 @@ class ListBooks extends Component {
                     <Shelf 
                     shelfTitle={shelf.shelfTitle}
                     shelfName={shelf.shelfName}
-                    booksArray={bookShelfArray}/>
+                    booksArray={bookShelfArray}
+                    moveShelf={this.props.moveShelf}
+                    />
                   </li>
                 ))
               }

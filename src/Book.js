@@ -7,7 +7,14 @@ class Book extends Component {
         <div className="book-top">
         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}"` }}></div>
           <div className="book-shelf-changer">
-            <select>
+            <select id="book-shelf-changer-select"
+              onChange={(event) => {
+                let newShelf = document.getElementById("book-shelf-changer-select").value;
+                console.log("new shelf " + newShelf + " etv " + event.target.value + " book " + this.props.book + " shelfName " + this.props.shelfName);
+                this.props.moveShelf(this.props.book, event.target.value)}
+              }
+              value={this.props.shelfName}
+            >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
