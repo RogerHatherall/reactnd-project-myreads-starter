@@ -6,6 +6,7 @@ This project is for Udacity's Google scholorship challenge Front end web develeo
 
 clone the project from https://github.com/RogerHatherall/reactnd-project-myreads-starter.git
 
+* cd into reactnd-project-myreads-starter
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
