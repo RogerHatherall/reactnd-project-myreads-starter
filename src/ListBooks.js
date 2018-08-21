@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 //New component with html from App.cs
 class ListBooks extends Component {
   render () {
-    console.log(this.props.shelvesArray)
-    console.log(this.props.booksArray)
     const bookShelfArray=this.props.booksArray
     
     return (
@@ -16,11 +14,10 @@ class ListBooks extends Component {
         </div>
         <div className="list-books-content">
           <ol className="book-shelves">
-            <li>
             {
               this.props.shelvesArray
                 .map(shelf => (
-                  <li key={shelf}>
+                  <li key={shelf.shelfName}>
                     <Shelf 
                     shelfTitle={shelf.shelfTitle}
                     shelfName={shelf.shelfName}
@@ -30,7 +27,6 @@ class ListBooks extends Component {
                   </li>
                 ))
               }
-            </li>
           </ol>
         </div>
         <div className="open-search">

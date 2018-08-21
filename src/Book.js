@@ -13,8 +13,6 @@ class Book extends Component {
           <div className="book-shelf-changer">
             <select id="book-shelf-changer-select"
               onChange={(event) => {
-                let newShelf = document.getElementById("book-shelf-changer-select").value;
-                console.log("new shelf " + newShelf + " etv " + event.target.value + " book " + this.props.book + " shelfName " + this.props.shelfName);
                 this.props.moveShelf(this.props.book, event.target.value)}
               }
               value={this.props.shelfName}
